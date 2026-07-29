@@ -1,1 +1,31 @@
+// CivilLab
 
+console.log("CivilLab Loaded");
+
+// زر البداية
+const startButton = document.querySelector(".hero button");
+
+if (startButton) {
+    startButton.addEventListener("click", () => {
+
+        document.querySelector(".cards").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+}
+
+// تأثير بسيط عند مرور الماوس على البطاقات
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+        card.style.transform = "translateY(-10px)";
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "translateY(0)";
+    });
+
+});
